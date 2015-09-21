@@ -1,0 +1,30 @@
+{
+  "name": "controlsneak",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt-nodejs": "latest",
+    "body-parser": "~1.0.0",
+    "connect-flash": "~0.1.1",
+    "cookie-parser": "~1.0.0",
+    "ejs": "~0.8.5",
+    "express": "~4.0.0",
+    "express-session": "~1.0.0",
+    "jsonwebtoken": "^5.0.5",
+    "jwt-simple": "^0.3.1",
+    "mongoose": "~3.8.1",
+    "mongoose-findorcreate": "^0.1.2",
+    "morgan": "~1.0.0",
+    "passport": "~0.1.17",
+    "passport-facebook": "~1.0.2",
+    "passport-facebook-token": "^2.3.0",
+    "passport-http-bearer": "^1.0.1",
+    "passport-local": "~0.1.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
