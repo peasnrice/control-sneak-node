@@ -4,14 +4,22 @@ var userHandlers = require("./userHandlers.js");
 
 module.exports = function(app, passport, jwt) {
 
-	app.get('/', function(req, res) {
-        res.send('Welcome to Control Sneak'); 
-    });
 
-	app.post('/signup', passport.authenticate('local-signup', {
-		 successRedirect : '/',
-		 failureRedirect : '/logout'
-	}));
+	app.post('/signup', function(req, res, next) {
+        passport.authenticate('local-signup', function(err, user, info){
+            if (err) { return next(err) }
+            
+            if (!user) {
+              return res.json(401, { error: 'user with username already exists' });
+            }
+            // return the information including token as JSON
+            res.json({
+              success: true,
+              message: 'Account Created!',
+            });
+
+        })(req, res, next);
+    });
 
     app.post('/login', function(req, res, next) {
         passport.authenticate('local-login', function(err, user, info){
