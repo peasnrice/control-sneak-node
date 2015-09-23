@@ -111,7 +111,7 @@ module.exports = function(app, passport, jwt) {
     });
 
     app.get('/test', function(req, res, next){
-        var cool = userHandlers.getUser(req, res);
+        userHandlers.getUser(req, res);
     });
 
 };

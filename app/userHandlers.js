@@ -6,7 +6,7 @@ function getUser(req, res, next){
         if (!user) {
           return res.json(401, { error: 'user not found' });
         }
-      	console.log("success");
+      	return res.json(200, { success: true, message: 'Found User' });
     });
 };
 
